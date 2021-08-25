@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="app-main__outer" ng-controller="SupplierController">
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="pe-7s-users text-success">
+                        </i>
+                    </div>
+                    <div>
+                        Medicine Supplier
+                        <div class="page-title-subheading">
+                            This an new medicine supplier creating page.
+                        </div>
+                    </div>
+                </div>
+                <div class="page-title-actions">
+                    <div class="d-inline-block dropdown">
+                        <button type="button" onclick="window.location.href='/Pharmacy/Supplier/Index'" class="btn btn-outline-primary">
+                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                <i class="fa fa-users fa-w-20"></i>
+                            </span>
+                            Supplier List
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Supplier | Edit - @ViewBag.Id
+                    </div>
+                    <div class="card-body">
+                        <form name="frmSupplier" ng-submit="frmSupplier.$valid && update()" ng-class="{'submitted' : submitted}" class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="col-md-4">
+                                    <div class="position-relative form-group">
+                                        <label>Name of Supplier</label>
+                                        <input name="supplierName" placeholder="Name" type="text" ng-model="supplier.Name" ng-keydown="$event.keyCode === 13 && changeFocus('shortName')" class="form-control" ng-class="{'validation-error':frmSupplier.supplierName.$invalid && submitted}" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="position-relative form-group">
+                                        <label>Short Name</label>
+                                        <input name="shortName" placeholder="Short Name" type="text" ng-model="supplier.ShortName" ng-keydown="$event.keyCode === 13 && changeFocus('mobile')" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="position-relative form-group">
+                                        <label>Mobile</label>
+                                        <input name="mobile" placeholder="Mobile" type="text" ng-model="supplier.Mobile" ng-keydown="$event.keyCode === 13 && changeFocus('address')" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="position-relative form-group">
+                                <label>Address</label>
+                                <textarea name="address" placeholder="Address" type="text" ng-model="supplier.Address" class="form-control" ng-keydown="$event.keyCode === 13 && changeFocus('isActive')" required></textarea>
+                            </div>
+                            <div class="position-relative form-check">
+                                <input name="isActive" type="checkbox" ng-model="supplier.IsActive" class="form-check-input" required>
+                                <label class="form-check-label">Is Active</label>
+                            </div>
+                            <div class="pull-right">
+                                <button type="submit" ng-show="IsProcessing == false" name="save" ng-click="submitted = true" class="btn btn-primary">
+                                    <i class="fa fa-save"></i>
+                                    Update
+                                </button>
+                            </div>
+                            <div uib-alert ng-repeat="alert in alerts" dismiss-on-timeout="5000" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)" class="d-flex align-items-center" role="alert">
+                                <svg ng-show="alert.type == 'primary'" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill" /></svg>
+                                <svg ng-show="alert.type == 'success'" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill" /></svg>
+                                <svg ng-show="alert.type == 'warning'" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill" /></svg>
+                                <svg ng-show="alert.type == 'danger'" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill" /></svg>
+                                <span>
+                                    <b>{{alert.msg}}</b>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Areas/Pharmacy/Scripts/SupplierController.js"></script>
+
+
+

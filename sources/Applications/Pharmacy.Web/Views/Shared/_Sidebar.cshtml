@@ -1,0 +1,243 @@
+﻿
+@{ 
+    var area = ViewContext.RouteData.DataTokens.ContainsKey("area")
+        ? ViewContext.RouteData.DataTokens["area"].ToString()
+        : "";
+    var controllerName = ViewContext.RouteData.Values["controller"].ToString();
+    var actionName = ViewContext.RouteData.Values["action"].ToString();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="app-sidebar sidebar-shadow">
+        <div class="scrollbar-sidebar">
+            <div class="app-sidebar__inner">
+                <ul class="vertical-nav-menu">
+                    <li class="app-sidebar__heading">Dashboards</li>
+                    <li>
+                        <a href="index.html" >
+                            <i class="metismenu-icon pe-7s-rocket"></i>
+                            Dashboard 1
+                        </a>
+                    </li>
+                    <li class="app-sidebar__heading">Pharmacy</li>
+                    <li @(controllerName == "Supplier" ? "class=mm-active" : "")>
+                        <a href="#">
+                            <i class="metismenu-icon fa fa-user"></i>
+                            Supplier
+                            <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down"></i>
+                        </a>
+                        <ul>
+                            <li >
+                                <a  @(controllerName == "Supplier" && actionName == "Create" ? "class=mm-active" : "") href="/Pharmacy/Supplier/Create">
+                                    <i class="fa fa-plus"></i>
+                                    New Supplier
+                                </a>
+                            </li>
+                            <li >
+                                <a @(controllerName == "Supplier" && actionName == "Index" ? "class=mm-active" : "") href="/Pharmacy/Supplier/Index">
+                                    <i class="fa fa-list"></i>
+                                    Supplier List
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-icons.html">
+                                    <i class="fa fa-money-bill"></i>
+                                    Payment
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-badges-labels.html">
+                                    <i class="fa fa-book"></i>
+                                    Supplier Ledger
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon fa fa-briefcase-medical"></i>
+                            Medicine
+                            <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="elements-buttons-standard.html">
+                                    <i class="fa fa-plus"></i>
+                                    New Medicine
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-dropdowns.html">
+                                    <i class="fa fa-list"></i>
+                                    Medicine List
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon fa fa-shopping-basket"></i>
+                            Purchase
+                            <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="elements-buttons-standard.html">
+                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                    Purchase Order
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-buttons-standard.html">
+                                    <i class="fa fa-plus"></i>
+                                    New Purchase
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-dropdowns.html">
+                                    <i class="fa fa-list"></i>
+                                    Purchase List
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-dropdowns.html">
+                                    <i class="fa fa-minus"></i>
+                                    Purchase Returned
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon fa fa-user-plus"></i>
+                            Customer
+                            <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="elements-buttons-standard.html">
+                                    <i class="fa fa-plus"></i>
+                                    New Customer
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-dropdowns.html">
+                                    <i class="fa fa-list"></i>
+                                    Customer List
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-icons.html">
+                                    <i class="fa fa-money-bill"></i>
+                                    Payment
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-badges-labels.html">
+                                    <i class="fa fa-book"></i>
+                                    Customer Ledger
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon fa fa-shopping-cart"></i>
+                            Medicine Sale
+                            <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="elements-buttons-standard.html">
+                                    <i class="fa fa-plus"></i>
+                                    New Sale
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-dropdowns.html">
+                                    <i class="fa fa-list"></i>
+                                    Medicine List
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon fa fa-chart-area"></i>
+                            Medicine Stock
+                            <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="elements-buttons-standard.html">
+                                    <i class="fa fa-download"></i>
+                                    Opening Stock
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-dropdowns.html">
+                                    <i class="fa fa-exchange-alt"></i>
+                                    Adjustted Stock
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-dropdowns.html">
+                                    <i class="fa fa-book"></i>
+                                    Stock Ledger
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon fa fa-cogs"></i>
+                            Settings
+                            <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="elements-buttons-standard.html">
+                                    <i class="fa fa-cog"></i>
+                                    Medicine Type
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-dropdowns.html">
+                                    <i class="fa fa-cog"></i>
+                                    Medicine Group
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-dropdowns.html">
+                                    <i class="fa fa-cog"></i>
+                                    Medicine Generic
+                                </a>
+                            </li>
+                            <li>
+                                <a href="elements-dropdowns.html">
+                                    <i class="fa fa-cog"></i>
+                                    Invoice Type
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="app-sidebar__heading">Pharmacy Accounts</li>
+                    <li>
+                        <a href="dashboard-boxes.html">
+                            <i class="metismenu-icon pe-7s-display2"></i>
+                            Account Ledger
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="~/Content/assets/scripts/main.js"></script>

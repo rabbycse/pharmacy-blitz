@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="PharmacyApp" ng-cloak>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pharmacy - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="~/Content/main.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Content/assets/scripts/main.js"></script>
+    <script src="~/Scripts/angular.js/angular.min.js"></script>
+    <script src="~/Scripts/angular-ui-bootstrap/ui-bootstrap.js"></script>
+    <script src="~/Scripts/angular-ui-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://rawgithub.com/CodeSeven/toastr/master/toastr.js"></script>
+    <link href="~/Content/assets/css/toast.css" rel="stylesheet" />
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+        </symbol>
+        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+        </symbol>
+        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </symbol>
+    </svg>
+    <script type="text/javascript">
+        var app = angular.module("PharmacyApp", ["ui.bootstrap"]);
+        app.filter('reverse', function () {
+            return function (items) {
+                return items.slice().reverse();
+            };
+        });
+
+        app.config(function ($sceProvider) {
+            $sceProvider.enabled(false);
+        });
+
+        app.directive('emptyTypeahead', function ($timeout) {
+            return {
+                require: 'ngModel',
+                link: function (scope, element, attr, ctrl) {
+                    element.bind('click', function () {
+                        var value = ctrl.$viewValue;
+                        ctrl.$setViewValue(value ? value : '');
+                    });
+                }
+            };
+        });
+
+        app.value("ngPattern", {
+            integerPattern: "^[0-9]{1,7}$",
+            numericPattern: "^[0-9]+(\.[0-9]{1,2})?$"
+        });
+
+        app.value("appMessage", {
+            save: "Well done! You have successfully saved data!",
+            update: "Well done! You have successfully updated the data!",
+            failure: "Bad luck! Failure to save data. Try again!",
+            info: "You have already selected to withdraw this item!",
+            fetch_Warning: "Data fetching failure!.",
+            info_return: "Return quantity is less than issues.",
+            duplicate: "Cannot insert duplicate item .",
+            duplicateProperty: "Item name already exist but others updated sucessfully.",
+            lisDCAlert: "Tocal DC count should be 100%",
+            detailItem: "Please Add Detail Item.",
+            getByIdParamNotNull: "Id parameter can not be null.",
+            required: "All the required field need to fill up."
+        });
+
+        app.factory('myService', ['appMessage', function (appMessage) {
+            return {
+                getAppMessage: function () {
+                    return appMessage; 
+                }
+            };
+        }]);
+       
+    </script>
+    <script type="text/javascript">
+
+        (function () {
+            App.init();
+            FormPlugins.init();
+
+            function changeFocus() {
+                if (e.keyCode == 13) {
+                    $("input[name=PackUnit]").focus();
+                }
+            }
+        });
+
+    </script>
+    
+    @RenderSection("HeaderStyles", required: false)
+    @RenderSection("HeaderJs", required: false)
+</head>
+<body>
+    <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
+        <div class="app-header header-shadow ">
+            <div class="app-header__logo">
+                <div class="logo-src"></div>
+                <div class="header__pane ml-auto">
+                    <div>
+                        <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="app-header__mobile-menu">
+                <div>
+                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="app-header__menu">
+                <span>
+                    <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                        <span class="btn-icon-wrapper">
+                            <i class="fa fa-ellipsis-v fa-w-6"></i>
+                        </span>
+                    </button>
+                </span>
+            </div>
+            <div class="app-header__content">
+                <div class="app-header-left">
+                    <div class="search-wrapper">
+                        <div class="input-holder">
+                            <input type="text" class="search-input" placeholder="Type to search">
+                            <button class="search-icon"><span></span></button>
+                        </div>
+                        <button class="close"></button>
+                    </div>
+                    <ul class="header-menu nav">
+                        <li class="nav-item">
+                            <a href="javascript:void(0);" class="nav-link">
+                                <i class="nav-link-icon fa fa-database"> </i>
+                                Statistics
+                            </a>
+                        </li>
+                        <li class="btn-group nav-item">
+                            <a href="javascript:void(0);" class="nav-link">
+                                <i class="nav-link-icon fa fa-edit"></i>
+                                Reports
+                            </a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a href="javascript:void(0);" class="nav-link">
+                                <i class="nav-link-icon fa fa-cog"></i>
+                                Settings
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="app-header-right">
+                    <div class="header-btn-lg pr-0">
+                        <div class="widget-content p-0">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left">
+                                    <div class="btn-group">
+                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                            <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                        </a>
+                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                            <button type="button" tabindex="0" class="dropdown-item">User Account</button>
+                                            <button type="button" tabindex="0" class="dropdown-item">Settings</button>
+                                            <div tabindex="-1" class="dropdown-divider"></div>
+                                            <a href="@Url.Action("LogOff", "Account", new { Area = "" })" type="button" tabindex="0" class="dropdown-item">LogOut</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content-left  ml-3 header-user-info">
+                                    <div class="widget-heading">
+                                        @{
+                                            var userEmail = "";
+                                            if (Session["Email"] != null)
+                                            {
+                                                userEmail = Session["Email"].ToString();
+                                                <label>@userEmail</label>
+                                            }
+
+                                        }
+                                    </div>
+                                </div>
+                                <div class="widget-content-right header-user-info ml-3">
+                                    <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                                        <i class="fa text-white fa-user pr-1 pl-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app-main">
+            @Html.Partial("_Sidebar")
+            @RenderBody()
+        </div>
+        <div class="app-main__outer">
+            <div class="app-footer">
+                <div class="app-footer__inner">
+                    <div class="app-footer-right">
+                        &copy; 2021 Software Design and Developed by &nbsp;
+                        <a href="#" target="_blank"> Architech Solution Ltd.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="~/Content/assets/scripts/main.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<script type="text/javascript">
+    (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>

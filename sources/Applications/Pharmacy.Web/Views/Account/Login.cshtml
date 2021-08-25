@@ -1,0 +1,73 @@
+﻿@model Pharmacy.Web.Models.LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/assets/css/fontawesome-free-5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="loginlayouts-main">
+        <div class="bg-layer">
+            <h1>Login</h1>
+            <div class="header-main">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="header-left-bottom">
+                        <form action="Login" method="post">
+                            <div class="icon1">
+                                <i class="fa fa-user"></i>
+                                @Html.TextBoxFor(m => m.Name, new { @class = "", @placeholder = "Email", @required = "", @style = "outline: none;font-size: 15px;color: #222;border: none;width: 90%;display: inline-block;background: transparent;letter-spacing: 1px;" })
+                                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="icon1">
+                                <i class="fa fa-lock"></i>
+                                @Html.PasswordFor(m => m.Password, new { @class = "", @placeholder = "Password", @required = "" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="login-check">
+                                <label class="checkbox"><input type="checkbox" asp-for="RememberMe" name="checkbox" checked=""><i> </i> Keep me logged in</label>
+                            </div>
+                            <div class="bottom">
+                                <button type="submit" class="btn">Log In</button>
+                            </div>
+                            <div class="links">
+                                <p><a href="#">Forgot Password?</a></p>
+                                <p class="right"><a href="#">New User? Register</a></p>
+                                <div class="clear"></div>
+                            </div>
+                        </form>
+
+                    </div>
+                }
+
+                <div class="social">
+                    <ul>
+                        <li>or login using : </li>
+                        <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="google"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- copyright -->
+            <div class="copyright">
+                <p>© 2021 Slide Login Form . All rights reserved | Design by <a>Code-Man</a></p>
+            </div>
+            <!-- //copyright -->
+        </div>
+    </div>
+    <!-- //main -->
+    <div id="v-login"></div>
+    <script>(function (v, d, o, ai) { ai = d.createElement('script'); ai.defer = true; ai.async = true; ai.src = v.location.protocol + o; d.head.appendChild(ai); })(window, document, '//a.vdo.ai/core/v-login/vdo.ai.js');</script>
+</body>
+</html>

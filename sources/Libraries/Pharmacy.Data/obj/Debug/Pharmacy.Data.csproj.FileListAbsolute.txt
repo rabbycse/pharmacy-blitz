@@ -1,0 +1,11 @@
+F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\Pharmacy.Data.dll
+F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\Pharmacy.Data.pdb
+F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\obj\Debug\Pharmacy.Data.csproj.CoreCompileInputs.cache
+F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\obj\Debug\Pharmacy.Data.dll
+F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\obj\Debug\Pharmacy.Data.pdb
+F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\Pharmacy.Data.dll.config
+F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\EntityFramework.dll
+F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\EntityFramework.xml
+F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\obj\Debug\Pharmacy.Data.csproj.CopyComplete
