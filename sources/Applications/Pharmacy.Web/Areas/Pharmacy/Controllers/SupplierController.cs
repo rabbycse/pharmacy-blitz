@@ -1,4 +1,5 @@
-﻿using Pharmacy.Data.Models;
+﻿using Pharmacy.Data;
+using Pharmacy.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,12 @@ namespace Pharmacy.Web.Areas.Pharmacy.Controllers
     {
         // GET: Pharmacy/Supplier
 
-        PharmacyEntities _ctx = new PharmacyEntities();
+        private readonly UnitOfWork _unitOfWork;
+
+        public SupplierController() 
+        {
+            _unitOfWork = new UnitOfWork();
+        }
 
         public ActionResult Index()
         {
@@ -20,7 +26,7 @@ namespace Pharmacy.Web.Areas.Pharmacy.Controllers
 
         public ActionResult GetAllSuppliers()
         {
-            var suppliers = _ctx.View_GetAllSupplier.ToList();
+            var suppliers = _unitOfWork.SupplierRepository.GetAll();
             var data = (from sp in suppliers
                         select new
                         {
@@ -47,7 +53,7 @@ namespace Pharmacy.Web.Areas.Pharmacy.Controllers
                 {
                     //supplier.CreatedAt = DateTime.Now;
                     //_ctx.Suppliers.Add(supplier);
-                    //_ctx.SaveChanges();
+                    //_unitOfWork.SaveChanges();
                     return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
                 }
                 else
@@ -72,7 +78,7 @@ namespace Pharmacy.Web.Areas.Pharmacy.Controllers
         {
             try
             {
-                var supplier = _ctx.View_GetAllSupplier.Find(id);
+                var supplier = _unitOfWork.SupplierRepository.GetById(id);
                 var data = new
                 {
                     supplier.Id,
@@ -94,7 +100,7 @@ namespace Pharmacy.Web.Areas.Pharmacy.Controllers
         {
             try
             {
-                var existingSupplier = _ctx.Suppliers.Find(supplier.Id);
+                var existingSupplier = _unitOfWork.SupplierRepository.GetById(supplier.Id);
                 if (existingSupplier != null)
                 {
                     existingSupplier.Name = supplier.Name;
@@ -102,7 +108,7 @@ namespace Pharmacy.Web.Areas.Pharmacy.Controllers
                     existingSupplier.Mobile = supplier.Mobile;
                     existingSupplier.IsActive = supplier.IsActive;
                     existingSupplier.EditedAt = DateTime.Now;
-                    _ctx.SaveChanges();
+                    _unitOfWork.Save();
                     return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
                 }
                 return Json(new { Success = false }, JsonRequestBehavior.AllowGet);

@@ -1,8 +1,5 @@
 ﻿app.controller('SupplierController', ['$scope', '$http', '$filter', 'appMessage', function ($scope, $http, $filter, appMessage) {
 
-    var link = document.querySelector('a[href="/Pharmacy/Supplier/Index"]');
-    link.style.display = 'none';
-
     $scope.supplier = [];
     $scope.supplier.Id = 0;
     $scope.alerts = [];

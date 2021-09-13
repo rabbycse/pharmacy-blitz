@@ -1,6 +1,4 @@
 ﻿app.controller('SupplierListController', ['$scope', '$http', '$filter', function ($scope, $http, $filter) {
-    var link = document.querySelector('a[href="/Pharmacy/Supplier/Index"]');
-    link.style.display = 'none';
     $scope.filteredSuppliers = [];
     $scope.itemsPerPage = 4;
     $scope.currentPage = 1;

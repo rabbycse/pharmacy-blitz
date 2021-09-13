@@ -40,12 +40,12 @@
                     <div class="card-body">
                         <form name="frmSupplier" ng-submit="frmSupplier.$valid && save()" ng-class="{'submitted' : submitted}" class="needs-validation" novalidate>
                             <div class="form-row">
-                                @*<div class="col-md-4">
+                                <div class="col-md-4">
                                     <div class="position-relative form-group">
                                         <label>Name of Supplier</label>
                                         <input name="supplierName" placeholder="Name" type="text" ng-model="supplier.Name" ng-keydown="$event.keyCode === 13 && changeFocus('shortName')" class="form-control" ng-class="{'validation-error':frmSupplier.supplierName.$invalid && submitted}" required>
                                     </div>
-                                </div>*@
+                                </div>
                                 <div class="col-md-4">
                                     <div class="position-relative form-group">
                                         <label>Short Name</label>
@@ -86,37 +86,12 @@
                                     <b>{{alert.msg}}</b>
                                 </span>
                             </div>
-                            <fieldset ng-repeat="row in rows">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="position-relative form-group">
-                                            <label>Name of Supplier</label>
-                                            <input name="supName" placeholder="Name" type="text" ng-model="formData.Name[$index+1]" ng-keydown="$event.keyCode === 13 && changeFocus('shortName')" class="form-control" ng-class="{'validation-error':frmSupplier.supplierName.$invalid && submitted}" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="position-relative form-group">
-                                            <button type="button" name="remove" ng-model="row.remove" class="btn btn-danger btn-sm" ng-click="removeRow()"><span class="fa fa-minus"></span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <div class="form-group">
-                                <button type="button" name="add_more" class="btn-success" ng-click="addRow()"><span class="fa fa-plus"></span>Add</button>
-                            </div>
-                            <div class="form-group">
-                                <button type="button" name="update" class="btn-success" ng-click="update()"><span class="fa fa-plus"></span>Add</button>
-                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        @*<div class="content">
-                <p><a class="btn btn-outline-primary" href="/Pharmacy/Supplier/Index"><i class="fa fa-arrow-circle-left"></i> Back to previous page</a> </p>
-            </div>*@
     </div>
-
 </div>
 <script src="~/Areas/Pharmacy/Scripts/SupplierController.js"></script>
 

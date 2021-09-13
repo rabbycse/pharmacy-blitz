@@ -9,3 +9,15 @@ F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\EntityFramework.SqlS
 F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\EntityFramework.xml
 F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\EntityFramework.SqlServer.xml
 F:\pharmacy-blitz\sources\Libraries\Pharmacy.Data\obj\Debug\Pharmacy.Data.csproj.CopyComplete
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\Pharmacy.Data.dll.config
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\Pharmacy.Data.dll
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\Pharmacy.Data.pdb
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\EntityFramework.dll
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\EntityFramework.SqlServer.dll
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\EntityFramework.xml
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\bin\Debug\EntityFramework.SqlServer.xml
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\obj\Debug\Pharmacy.Data.csproj.AssemblyReference.cache
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\obj\Debug\Pharmacy.Data.csproj.CoreCompileInputs.cache
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\obj\Debug\Pharmacy.Data.csproj.CopyComplete
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\obj\Debug\Pharmacy.Data.dll
+F:\pharmacy-project\pharmacy-blitz\sources\Libraries\Pharmacy.Data\obj\Debug\Pharmacy.Data.pdb
