@@ -45,15 +45,16 @@ namespace Pharmacy.Web.Areas.Pharmacy.Controllers
         }
 
         [HttpPost]
-        public JsonResult SaveSupplier(IEnumerable<Supplier> supplier)
+        public JsonResult SaveSupplier(Supplier supplier)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    //supplier.CreatedAt = DateTime.Now;
-                    //_ctx.Suppliers.Add(supplier);
-                    //_unitOfWork.SaveChanges();
+                    supplier.CreatedAt = DateTime.Now;
+                    supplier.CreatedBy = Convert.ToInt32(User.Identity.Name);
+                    _unitOfWork.SupplierRepository.Insert(supplier);
+                    _unitOfWork.Save();
                     return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
                 }
                 else
@@ -108,6 +109,8 @@ namespace Pharmacy.Web.Areas.Pharmacy.Controllers
                     existingSupplier.Mobile = supplier.Mobile;
                     existingSupplier.IsActive = supplier.IsActive;
                     existingSupplier.EditedAt = DateTime.Now;
+                    existingSupplier.EditedBy = Convert.ToInt32(User.Identity.Name);
+                    _unitOfWork.SupplierRepository.Update(existingSupplier);
                     _unitOfWork.Save();
                     return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
                 }

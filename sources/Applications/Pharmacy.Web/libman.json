@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "angular-material@1.2.3",
+      "destination": "Scripts/angular-material/"
+    },
+    {
+      "library": "angular-materialize@0.2.2",
+      "destination": "Scripts/angular-materialize/"
+    },
+    {
+      "library": "angular-material@1.2.2",
+      "destination": "Scripts/angular-material/"
+    },
+    {
+      "library": "angular.js@1.6.10",
+      "destination": "Scripts/angularJS/"
+    },
+    {
+      "library": "bootstrap@4.6.0",
+      "destination": "Content/bootstrap/"
+    }
+  ]
+}

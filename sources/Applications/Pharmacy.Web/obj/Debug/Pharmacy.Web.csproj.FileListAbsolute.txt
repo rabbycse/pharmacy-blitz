@@ -167,7 +167,10 @@ F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\EntityF
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.AspNet.Identity.Core.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Bcl.AsyncInterfaces.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Extensions.DependencyInjection.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Owin.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Owin.Security.Cookies.dll
@@ -181,6 +184,8 @@ F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microso
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Newtonsoft.Json.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Owin.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Pharmacy.Data.dll
+F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Threading.Tasks.Extensions.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Web.Helpers.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Web.Mvc.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Web.Optimization.dll
@@ -191,6 +196,11 @@ F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\WebGrease.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Pharmacy.Data.pdb
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Pharmacy.Data.dll.config
+F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Bcl.AsyncInterfaces.xml
+F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Extensions.DependencyInjection.xml
+F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Threading.Tasks.Extensions.xml
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Web.Helpers.xml
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Web.Mvc.xml
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Web.Optimization.xml
@@ -220,13 +230,3 @@ F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\obj\Debug\P
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\obj\Debug\Pharmacy.Web.csproj.CopyComplete
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\obj\Debug\Pharmacy.Web.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\obj\Debug\Pharmacy.Web.pdb
-F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Bcl.AsyncInterfaces.dll
-F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Extensions.DependencyInjection.dll
-F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
-F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Threading.Tasks.Extensions.dll
-F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Bcl.AsyncInterfaces.xml
-F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Extensions.DependencyInjection.xml
-F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
-F:\pharmacy-project\pharmacy-blitz\sources\Applications\Pharmacy.Web\bin\System.Threading.Tasks.Extensions.xml

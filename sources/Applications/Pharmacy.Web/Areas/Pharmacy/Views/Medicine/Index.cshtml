@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="app-main__outer" ng-controller="MedicineListController">
+    <div class="app-main__inner">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="fa fa-briefcase-medical icon-gradient bg-amy-crisp">
+                        </i>
+                    </div>
+                    <div>
+                        List of Medicines
+                        <div class="page-title-subheading">
+                            This is an medicine listing page.
+                        </div>
+                    </div>
+                </div>
+                <div class="page-title-actions">
+                    <button type="button" onclick="window.location.href='/Pharmacy/Medicine/Create'" class="btn btn-outline-primary">
+                        <span class="btn-icon-wrapper pr-2 opacity-7">
+                            <i class="fa fa-plus-circle fa-w-20"></i>
+                        </span>
+                        New Medicine
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Medicine List
+                        <div class="btn-actions-pane-right">
+                            <div class="input-group md-form form-sm form-2 pl-0">
+                                <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search" ng-change="searchFromList()" ng-model="searchText">
+                                <div class="input-group-append"><button type="button" class="btn btn-primary"><i class="fas fa-search"></i></button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">Supplier Name</th>
+                                    <th class="text-center">Selling Unit</th>
+                                    <th class="text-center">Pack Size</th>
+                                    <th class="text-center">Pack Mrp</th>
+                                    <th class="text-center">Mrp</th>
+                                    <th class="text-center">Is Active</th>
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in MedicinesList">
+                                    <td class="text-center text-muted" ng-bind="{{((currentPage - 1) * itemsPerPage) + ($index + 1)}}"></td>
+                                    <td ng-bind="x.Name"></td>
+                                    <td ng-bind="x.SupplierName"></td>
+                                    <td ng-bind="x.SellingUnit"></td>
+                                    <td ng-bind="x.PackSize"></td>
+                                    <td ng-bind="x.PackMrp"></td>
+                                    <td ng-bind="x.Mrp"></td>
+                                    <td ng-bind="x.IsActive"></td>
+                                    <td class="text-center">
+                                        <div class="badge badge-success">Active</div>
+                                    </td>
+                                    <td class="text-center">
+                                        <a class="btn btn-outline-primary" href="/Pharmacy/Supplier/Edit?Id={{x.Id}}"><i class="fa fa-edit"></i> Edit</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-block text-center card-footer">
+                        <ul uib-pagination total-items="DataList.length" items-per-page="itemsPerPage" ng-change="pageChanged()" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+</div>
+<script src="~/Areas/Pharmacy/Scripts/SupplierListController.js"></script>
+

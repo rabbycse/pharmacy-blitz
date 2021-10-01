@@ -9,8 +9,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+
     <link href="~/Content/main.css" rel="stylesheet" />
+    <script src="~/Content/md-bootstrap-3.9.0/js/mdb.min.js"></script>
 </head>
 <body>
     <div class="app-sidebar sidebar-shadow">
@@ -19,7 +20,7 @@
                 <ul class="vertical-nav-menu">
                     <li class="app-sidebar__heading">Dashboards</li>
                     <li>
-                        <a href="index.html" >
+                        <a href="index.html">
                             <i class="metismenu-icon pe-7s-rocket"></i>
                             Dashboard 1
                         </a>
@@ -32,13 +33,13 @@
                             <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down"></i>
                         </a>
                         <ul>
-                            <li >
-                                <a  @(controllerName == "Supplier" && actionName == "Create" ? "class=mm-active" : "") href="/Pharmacy/Supplier/Create">
+                            <li>
+                                <a @(controllerName == "Supplier" && actionName == "Create" ? "class=mm-active" : "") href="/Pharmacy/Supplier/Create">
                                     <i class="fa fa-plus"></i>
                                     New Supplier
                                 </a>
                             </li>
-                            <li >
+                            <li>
                                 <a @(controllerName == "Supplier" && actionName == "Index" ? "class=mm-active" : "") href="/Pharmacy/Supplier/Index">
                                     <i class="fa fa-list"></i>
                                     Supplier List
@@ -58,21 +59,22 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
+                   
+                    <li @(controllerName == "Medicine" ? "class=mm-active" : "")>
                         <a href="#">
                             <i class="metismenu-icon fa fa-briefcase-medical"></i>
                             Medicine
-                            <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down"></i>
+                            <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down pr-3"></i>
                         </a>
                         <ul>
-                            <li>
-                                <a href="elements-buttons-standard.html">
+                            <li class="sidenav-item">
+                                <a @(controllerName == "Medicine" && actionName == "Create" ? "class=mm-active" : "") href="/Pharmacy/Medicine/Create" class="sidenav-link ripple-surface ripple-surface-secondary">
                                     <i class="fa fa-plus"></i>
                                     New Medicine
                                 </a>
                             </li>
                             <li>
-                                <a href="elements-dropdowns.html">
+                                <a @(controllerName == "Medicine" && actionName == "Index" ? "class=mm-active" : "") href="/Pharmacy/Medicine/Index">
                                     <i class="fa fa-list"></i>
                                     Medicine List
                                 </a>
@@ -226,7 +228,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                     <li class="app-sidebar__heading">Pharmacy Accounts</li>
                     <li>
                         <a href="dashboard-boxes.html">

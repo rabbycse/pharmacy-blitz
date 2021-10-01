@@ -51,21 +51,11 @@
         });
     }
 
-    $scope.formData = {};
-
-
-
-
-
-    $scope.rows = [{
-        name: 'supName', name: 'remove'
-    }];
-
     $scope.update = function () {
         $http({
             method: "POST",
             url: "/Pharmacy/Supplier/UpdateSupplier",
-            data: $scope.formData
+            data: $scope.supplier
         }).then(function (response) {
             $scope.submitted = false;
             $scope.alerts.push({ 'type': 'success', 'msg': appMessage.update });
@@ -73,25 +63,6 @@
             $scope.alerts.push({ 'type': 'danger', 'msg': appMessage.failure });
         });
     };
-
-    $scope.addRow = function () {
-        var id = $scope.rows.length + 1;
-        $scope.rows.push({ 'id': 'dynamic' + id });
-        $scope.adddata();
-    };
-
-    $scope.exedata = [];
-    $scope.adddata = function () {
-
-        var name = $scope.formData.Name.id;
-        $scope.exedata.push($scope.formData.Name);
-    };
-
-    $scope.removeRow = function (row) {
-        var index = $scope.rows.indexOf(row);
-        $scope.rows.splice(index, 1);
-    };
-
 
 }]);
 

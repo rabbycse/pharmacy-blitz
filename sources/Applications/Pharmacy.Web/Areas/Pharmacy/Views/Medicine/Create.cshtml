@@ -1,0 +1,191 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="app-main__outer">
+    <div class="app-main__inner" ng-controller="MedicineController">
+        <div class="app-page-title">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="fa fa-briefcase-medical text-success">
+                        </i>
+                    </div>
+                    <div>
+                        Medicine
+                        <div class="page-title-subheading">
+                            This an new medicine creating page.
+                        </div>
+                    </div>
+                </div>
+                <div class="page-title-actions">
+                    <div class="d-inline-block dropdown">
+                        <button type="button" onclick="window.location.href='/Pharmacy/Medicine/Index'" class="btn btn-outline-primary block-page-btn-example-1">
+                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                <i class="fa fa-briefcase-medical fa-w-20"></i>
+                            </span>
+                            Medicine List
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-header">
+                        Medicine | New
+                    </div>
+                    <div class="card-body">
+                        <form name="frmMedicine" ng-submit="frmMedicine.$valid && save()" ng-class="{'submitted' : submitted}" class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Name of Medicine</label>
+                                        <div class="col-sm-8">
+                                            <div class="form-outline w-100">
+                                                <input type="text" id="medicineName" name="medicineName" ng-model="medicine.MedicineName" ng-keydown="$event.keyCode === 13 && changeFocus('originName')" class="form-control" ng-class="{'validation-error':frmMedicine.medicineName.$invalid && submitted}" required>
+                                                <label class="form-label" for="medicineName" style="margin-left: 0px; font-size:16px">Enter medicine name</label>
+                                                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 116.8px;"></div><div class="form-notch-trailing"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-size:16px">Name of Origine<span class="red"><b>*</b></span></label>
+                                        <div class="col-sm-8">
+                                            <div class="form-outline w-100 scrollable-dropdown-menu">
+                                                <input ng-model="medicine.OrigineName" class="form-control"
+                                                       id="origineName"
+                                                       type="text"
+                                                       empty-typeahead
+                                                       name="origineName"
+                                                       typeahead-on-select="OnSelectOrigine($item)"
+                                                       autocomplete="off"
+                                                       uib-typeahead="x as x.name for x in options | filter:{'name':$viewValue}  | limitTo:10"
+                                                       spellcheck="false"
+                                                       typeahead-editable="true"
+                                                       required
+                                                       typeahead-min-length="0" />
+                                                <label class="form-label" for="origineName" style="margin-left: 0px; font-size:16px">Select origine name</label>
+                                                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 116.8px;"></div><div class="form-notch-trailing"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Name of Brand<span class="red"><b>*</b></span></label>
+                                        <div class="col-sm-8">
+                                            <div class="form-outline w-100 scrollable-dropdown-menu">
+                                                <input ng-model="medicine.BrandName" class="form-control"
+                                                       id="brandName"
+                                                       type="text"
+                                                       empty-typeahead
+                                                       name="brandName"
+                                                       typeahead-on-select="OnSelectBrand($item)"
+                                                       autocomplete="off"
+                                                       uib-typeahead="x as x.name for x in options | filter:{'name':$viewValue}  | limitTo:10"
+                                                       spellcheck="false"
+                                                       typeahead-editable="true"
+                                                       required
+                                                       typeahead-min-length="0" />
+                                                <label class="form-label" for="brandName" style="margin-left: 0px; font-size:16px">Select brand name</label>
+                                                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 116.8px;"></div><div class="form-notch-trailing"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Pack Unit<span class="red"><b>*</b></span></label>
+                                        <div class="col-sm-8">
+                                            <div class="form-outline w-100">
+                                                <input id="packUnit" name="packUnit" type="text" ng-model="medicine.PackUnit" ng-keydown="$event.keyCode === 13 && changeFocus('')" class="form-control" ng-class="{'validation-error':frmMedicine.packUnit.$invalid && submitted}" required>
+                                                <label class="form-label" for="packUnit" style="margin-left: 0px; font-size:16px">Enter pack unit</label>
+                                                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 116.8px;"></div><div class="form-notch-trailing"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Strength of Medicine</label>
+                                        <div class="col-sm-8">
+                                            <div class="form-outline w-100 scrollable-dropdown-menu">
+                                                <input ng-model="medicine.Strength" class="form-control"
+                                                       id="strength"
+                                                       type="text"
+                                                       empty-typeahead
+                                                       name="strength"
+                                                       typeahead-on-select="OnSelectStrength($item)"
+                                                       autocomplete="off"
+                                                       uib-typeahead="x as x.name for x in options | filter:{'name':$viewValue}  | limitTo:10"
+                                                       spellcheck="false"
+                                                       typeahead-editable="true"
+                                                       required
+                                                       typeahead-min-length="0" />
+                                                <label class="form-label" for="strength" style="margin-left: 0px; font-size:16px">Select medicine strength</label>
+                                                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 116.8px;"></div><div class="form-notch-trailing"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">Pack Mrp<span class="red"><b>*</b></span></label>
+                                        <div class="col-sm-8">
+                                            <div class="form-outline w-100">
+                                                <input id="packMrp" name="packMrp" type="text" ng-model="medicine.packMrp" ng-keydown="$event.keyCode === 13 && changeFocus('')" class="form-control" ng-class="{'validation-error':frmMedicine.packUnit.$invalid && submitted}" required>
+                                                <label class="form-label" for="packMrp" style="margin-left: 0px; font-size:16px">Enter pack mrp</label>
+                                                <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 116.8px;"></div><div class="form-notch-trailing"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="position-relative form-check">
+                                <input name="isActive" type="checkbox" ng-model="supplier.IsActive" class="form-check-input" required>
+                                <label class="form-check-label">Is Active</label>
+                            </div>
+                            <div class="pull-right">
+                                <button type="submit" ng-show="IsProcessing == false" name="save" ng-click="submitted = true" class="btn btn-primary">
+                                    <i class="fa fa-save"></i>
+                                    Save
+                                </button>
+                                <button type="button" ng-show="IsProcessing == true" name="add" onclick="window.location.href='/Pharmacy/Supplier/Create'" class="btn btn-primary">
+                                    <i class="fas fa-sync"></i>
+                                    Refresh
+                                </button>
+                            </div>
+                            <div uib-alert ng-repeat="alert in alerts" dismiss-on-timeout="5000" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)" class="d-flex align-items-center" role="alert">
+                                <svg ng-show="alert.type == 'primary'" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill" /></svg>
+                                <svg ng-show="alert.type == 'success'" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill" /></svg>
+                                <svg ng-show="alert.type == 'warning'" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill" /></svg>
+                                <svg ng-show="alert.type == 'danger'" class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill" /></svg>
+                                <span>
+                                    <b>{{alert.msg}}</b>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Areas/Pharmacy/Scripts/MedicineController.js"></script>
+
+
+
+
+

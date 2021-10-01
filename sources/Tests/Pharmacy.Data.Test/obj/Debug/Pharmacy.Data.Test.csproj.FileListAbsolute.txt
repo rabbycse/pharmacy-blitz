@@ -21,8 +21,8 @@ F:\pharmacy-project\pharmacy-blitz\sources\Tests\Pharmacy.Data.Test\bin\Debug\Mi
 F:\pharmacy-project\pharmacy-blitz\sources\Tests\Pharmacy.Data.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Tests\Pharmacy.Data.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 F:\pharmacy-project\pharmacy-blitz\sources\Tests\Pharmacy.Data.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-F:\pharmacy-project\pharmacy-blitz\sources\Tests\Pharmacy.Data.Test\obj\Debug\Pharmacy.Data.Test.csproj.AssemblyReference.cache
 F:\pharmacy-project\pharmacy-blitz\sources\Tests\Pharmacy.Data.Test\obj\Debug\Pharmacy.Data.Test.csproj.CoreCompileInputs.cache
 F:\pharmacy-project\pharmacy-blitz\sources\Tests\Pharmacy.Data.Test\obj\Debug\Pharmacy.Data.Test.csproj.CopyComplete
 F:\pharmacy-project\pharmacy-blitz\sources\Tests\Pharmacy.Data.Test\obj\Debug\Pharmacy.Data.Test.dll
 F:\pharmacy-project\pharmacy-blitz\sources\Tests\Pharmacy.Data.Test\obj\Debug\Pharmacy.Data.Test.pdb
+F:\pharmacy-project\pharmacy-blitz\sources\Tests\Pharmacy.Data.Test\obj\Debug\Pharmacy.Data.Test.csproj.AssemblyReference.cache
