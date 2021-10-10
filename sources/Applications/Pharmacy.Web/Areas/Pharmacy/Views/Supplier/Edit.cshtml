@@ -42,29 +42,41 @@
                             <div class="form-row">
                                 <div class="col-md-4">
                                     <div class="position-relative form-group">
-                                        <label>Name of Supplier</label>
-                                        <input name="supplierName" placeholder="Name" type="text" ng-model="supplier.Name" ng-keydown="$event.keyCode === 13 && changeFocus('shortName')" class="form-control" ng-class="{'validation-error':frmSupplier.supplierName.$invalid && submitted}" required>
+                                        <div class="form-outline w-100">
+                                            <input id="supplierName" name="supplierName" type="text" ng-model="supplier.Name" ng-keydown="$event.keyCode === 13 && changeFocus('shortName')" class="form-control active" ng-touched="true" ng-class="{'validation-error':frmSupplier.supplierName.$invalid && submitted}" required>
+                                            <label class="form-label" for="supplierName" style="margin-left: 0px; font-size:16px">Enter supplier name</label>
+                                            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 116.8px;"></div><div class="form-notch-trailing"></div></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="position-relative form-group">
-                                        <label>Short Name</label>
-                                        <input name="shortName" placeholder="Short Name" type="text" ng-model="supplier.ShortName" ng-keydown="$event.keyCode === 13 && changeFocus('mobile')" class="form-control" required>
+                                        <div class="form-outline w-100">
+                                            <input id="shortName" name="shortName" type="text" ng-model="supplier.ShortName" ng-keydown="$event.keyCode === 13 && changeFocus('mobile')" class="form-control active" required>
+                                            <label class="form-label" for="shortName" style="margin-left: 0px; font-size:16px">Enter short name</label>
+                                            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 104.8px;"></div><div class="form-notch-trailing"></div></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="position-relative form-group">
-                                        <label>Mobile</label>
-                                        <input name="mobile" placeholder="Mobile" type="text" ng-model="supplier.Mobile" ng-keydown="$event.keyCode === 13 && changeFocus('address')" class="form-control" required>
+                                        <div class="form-outline w-100">
+                                            <input id="mobile" name="mobile" type="text" ng-model="supplier.Mobile" ng-keydown="$event.keyCode === 13 && changeFocus('address')" class="form-control active" required>
+                                            <label class="form-label" for="mobile" style="margin-left: 0px; font-size:16px">Enter mobile</label>
+                                            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 76.8px;"></div><div class="form-notch-trailing"></div></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="position-relative form-group">
-                                <label>Address</label>
-                                <textarea name="address" placeholder="Address" type="text" ng-model="supplier.Address" class="form-control" ng-keydown="$event.keyCode === 13 && changeFocus('isActive')" required></textarea>
+                                <div class="form-outline w-100">
+                                    <textarea id="address" name="address" type="text" ng-model="supplier.Address" class="form-control active" ng-keydown="$event.keyCode === 13 && changeFocus('isActive')" required></textarea>
+                                    <label class="form-label" for="address" style="margin-left: 0px; font-size:16px">Enter address</label>
+                                    <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 80.8px;"></div><div class="form-notch-trailing"></div></div>
+                                </div>
                             </div>
                             <div class="position-relative form-check">
-                                <input name="isActive" type="checkbox" ng-model="supplier.IsActive" class="form-check-input" required>
+                                <input name="isActive" type="checkbox" ng-model="supplier.IsActive" class="form-check-input">
                                 <label class="form-check-label">Is Active</label>
                             </div>
                             <div class="pull-right">

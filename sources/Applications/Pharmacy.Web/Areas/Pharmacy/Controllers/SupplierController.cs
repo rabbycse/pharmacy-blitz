@@ -33,7 +33,8 @@ namespace Pharmacy.Web.Areas.Pharmacy.Controllers
                             sp.Id,
                             sp.Name,
                             sp.ShortName,
-                            sp.Mobile
+                            sp.Mobile,
+                            sp.IsActive
                         }).ToList();
 
             return Json(data, JsonRequestBehavior.AllowGet);
@@ -120,6 +121,11 @@ namespace Pharmacy.Web.Areas.Pharmacy.Controllers
             {
                 return Json(new { Success = false }, JsonRequestBehavior.AllowGet);
             }
+        }
+
+        public ActionResult Report() 
+        {
+            return View();
         }
     }
 }

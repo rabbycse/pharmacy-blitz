@@ -59,16 +59,15 @@
                             </li>
                         </ul>
                     </li>
-                   
                     <li @(controllerName == "Medicine" ? "class=mm-active" : "")>
                         <a href="#">
                             <i class="metismenu-icon fa fa-briefcase-medical"></i>
                             Medicine
-                            <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down pr-3"></i>
+                            <i style="font-size:15px" class="metismenu-state-icon fa fa-angle-down"></i>
                         </a>
                         <ul>
-                            <li class="sidenav-item">
-                                <a @(controllerName == "Medicine" && actionName == "Create" ? "class=mm-active" : "") href="/Pharmacy/Medicine/Create" class="sidenav-link ripple-surface ripple-surface-secondary">
+                            <li>
+                                <a @(controllerName == "Medicine" && actionName == "Create" ? "class=mm-active" : "") href="/Pharmacy/Medicine/Create">
                                     <i class="fa fa-plus"></i>
                                     New Medicine
                                 </a>
@@ -76,7 +75,7 @@
                             <li>
                                 <a @(controllerName == "Medicine" && actionName == "Index" ? "class=mm-active" : "") href="/Pharmacy/Medicine/Index">
                                     <i class="fa fa-list"></i>
-                                    Medicine List
+                                    Supplier List
                                 </a>
                             </li>
                         </ul>
